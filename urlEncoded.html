@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL encoded</title>
+</head>
+<body>
+<textarea name="in" id="in" cols="30" rows="2"></textarea>
+<label for="out" id="for_out">Result</label>
+<textarea name="out" id="out" cols="30" rows="1"></textarea>
+<input id="convert" type="button" value="Go" onclick="encode()">
+<script>
+    var input = document.getElementById('in');
+    var output = document.getElementById('out');
+
+    function encode() {
+        var inputData = input.value;
+        output.value = encodeURIComponent(inputData);
+    }
+</script>
+</body>
+</html>

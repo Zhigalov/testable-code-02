@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL encoded</title>
+</head>
+<body>
+<label for="in" id="for_in">from</label>
+<input id="in" name="in">
+<label for="out" id="for_out">to</label>
+<input id="out" name="out">
+<input id="convert" type="button" value="Go" onclick="encode()">
+<script>
+    var input = document.getElementById('in');
+    var output = document.getElementById('out');
+
+    function encode() {
+        var inputData = parseInt(input.value, 10);
+
+        var request = new XMLHttpRequest();
+        request.open('GET', '/currency', true);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    var response = JSON.parse(request.responseText);
+                    output.value = response.rate * inputData;
+                }
+            }
+        };
+        request.send(null);
+    }
+</script>
+</body>
+</html>

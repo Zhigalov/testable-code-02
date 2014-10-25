@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+
+body
+{
+  background: #34495e;
+  color: white;
+  font-family: 'Roboto';
+}
+
+.form_flat
+{
+  background: #9b59b6;
+  margin: 25px auto;
+  width: 50%;
+  padding: 2em;
+  position: relative;
+  font-family: 'Roboto';
+}
+
+form input[type=text]
+{
+  font-family: 'Roboto';
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #fff;
+  outline: none;
+  margin: 0;
+}
+
+.auth_ok
+{
+  border: 3px solid #2ecc71;
+  color: black;
+}
+
+.auth_error
+{
+  border: 3px solid #e74c3c;
+}

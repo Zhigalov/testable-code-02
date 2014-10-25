@@ -1,17 +1,22 @@
 <html>
   <head>
     <title>form validation</title>
-    <link href="index.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
 
-    <form name="auth" class="form">
-      <label for="email">E-mail</label>
-      <input type="text" name="email" id="email" />
-
-      <input type="submit" value="Send" />
+    <form name="auth" class="form_flat auth__form">
+      <input type="text" name="email" id="email" placeholder="example@uprt.ru"/>
     </form>
 
     <script src="index.js"></script>
+    <script>
+      // Когда страница будет готова, создай экземпляр чекера
+      document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+          new Checker(document.forms.auth.email);
+        }
+      };
+    </script>
   </body>
 </html>

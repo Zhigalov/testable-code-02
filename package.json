@@ -1,0 +1,21 @@
+{
+  "name": "4-email-validation",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "casperjs": "~1.1.0-beta3"
+  },
+  "scripts": {
+    "test": "casperjs test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slogger/4-email-validation.git"
+  },
+  "author": "Maxim Syrykh (@slggr)",
+  "bugs": {
+    "url": "https://github.com/slogger/4-email-validation/issues"
+  }
+}

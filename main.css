@@ -1,0 +1,9 @@
+#email {
+    outline: none;
+}
+.valid-email {
+    border: 1px solid #419C3D;
+}
+.invalid-email {
+    border: 1px solid #DB1A1A;
+}

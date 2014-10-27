@@ -1,0 +1,41 @@
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+}
+div
+{
+	text-align: center;
+}
+input
+{
+	width: 310px;
+	height: 30px;
+	font-size: 28px;
+}
+
+#email
+{
+	outline: none;
+}
+.wait
+{
+	border: 5px;
+    border-style: outset;
+    border-color: #0000FF;
+    background-color: #5EC4CD;
+}
+.valid
+{
+    border: 5px;
+    border-style: outset;
+    border-color: #00FF00;
+    background-color: #BCF46E;
+}
+.invalid
+{
+    border: 5px;
+    border-style: outset;
+    border-color: #FF0000;
+    background-color: #FF8B73;
+}

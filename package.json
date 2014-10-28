@@ -1,16 +1,21 @@
 {
-  "devDependencies": {
-    "karma": "^0.12.24",
-    "karma-chai": "^0.1.0",
-    "karma-chai-plugins": "^0.2.3",
-    "karma-chrome-launcher": "^0.1.5",
-    "karma-mocha": "^0.1.9",
-    "sinon": "^1.10.3",
-    "supertest": "^0.14.0"
+  "name": "4-email-validation",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   },
-  "dependencies": {
-    "chai": "^1.9.2",
-    "express": "^4.9.6",
-    "lodash": "^2.4.1"
+  "devDependencies": {
+    "casperjs": "~1.1.0-beta3"
+  },
+  "scripts": {
+    "test": "casperjs test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slogger/4-email-validation.git"
+  },
+  "author": "Maxim Syrykh (@slggr)",
+  "bugs": {
+    "url": "https://github.com/slogger/4-email-validation/issues"
   }
 }

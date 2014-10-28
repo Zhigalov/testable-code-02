@@ -1,4 +1,4 @@
-var casper = require('casper').create();
+
 
 casper.test.begin('Page behaviour tests', function suite(test) {
     casper.start('http://localhost:63342/email%20validation/index.html', function() {

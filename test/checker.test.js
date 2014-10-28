@@ -42,17 +42,8 @@ casper.test.begin('Checker tests', function suite(test) {
       
       // Чистим поле
       this.sendKeys('#email', '', { reset : true });
-      this.capture('before.png', {
-                          top: 0,
-                          left: 0,
-                          width: 800,
-                          height: 600
-                      }, {
-                                          format: 'png',
-                          quality: 75
-                      });
       // Тестируем с пустотой
-      // this.sendKeys('#email', '');
+      this.sendKeys('#email', '');
       actual = casper.evaluate(function() {
         return document.forms.auth.email.className; 
       });

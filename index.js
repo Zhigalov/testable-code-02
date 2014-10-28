@@ -6,12 +6,19 @@ var Checker = function(elem) {
   elem.onkeyup = function(evt) {
       evt.preventDefault();
       var isValid = isValidEmail(this.value);
-      if(isValid) {
-        elem.className = "auth_ok";
+      if(this.value.length === 0) {
+          elem.className = "";
       } else {
-        elem.className = "auth_error";
+        if(isValid) {
+            elem.className = "auth_ok";
+        } else {
+            elem.className = "auth_error";
+        }
       }
   };
+  
+  elem.onpaste = elem.onkeyup;
+  elem.onchange = elem.onkeyup;
 
   var isValidEmail = function(email) {
       var atpos = email.indexOf("@");

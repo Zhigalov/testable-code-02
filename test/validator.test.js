@@ -6,7 +6,6 @@ var fillEmail = function(browser, email) {
 		browser.sendKeys('#email-input', casper.page.event.key.Backspace);
 	}
 	browser.sendKeys('#email-input', email, {reset: true});
-	console.log(currentInput);
 };
 
 var getValidation = function(browser) {
@@ -27,6 +26,8 @@ casper.test.begin('Validation testing', function suite(test) {
 		test.assertEquals(validate(this, 'vnbgfjbndkjnv'), 'red', 'vnbgfjbndkjnv');
 		test.assertEquals(validate(this, 'uskovm@gmail.com'), 'green', 'michaeluskov@ya.ru');
 		test.assertEquals(validate(this, ''), '', 'Blank input');
+		test.assertEquals(validate(this, 'uskovm@[192.168.0.1]'), 'green', 'uskovm@[192.168.0.1]');
+		test.assertEquals(validate(this, '@[192.168.0.1]'), 'green', '@[192.168.0.1]');
 	}).run(function() {
 		test.done();
 	});

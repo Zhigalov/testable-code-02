@@ -1,393 +1,44 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<title>Testable code</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=792, user-scalable=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<!--<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">-->
-    <link rel="stylesheet" href="styles/screen.css">
-    <link rel="stylesheet" href="styles/print.css" media="print">
-    <link rel="stylesheet" href="styles/idea.min.css">
-    <link rel="stylesheet" href="styles/user.css">
+    <title>e-mail verification</title>
+    <style>
+     .badEmail {
+      border: 5px solid red;
+      padding: 1px;
+     }
+     .goodEmail {
+       border: 5px solid green;
+       padding: 1px;	
+     }
+     .none {
+      border: 1px solid #ccc;
+     }
+    </style>
+
 </head>
-<body class="list">
-	<header class="caption">
-		<h1>Интеграционное тестирование</h1>
-		<p>Сергей Жигалов</p>
-	</header>
+<body>
+<label for="inputEmail" id="for_inputEmail">e-mail:</label>
+<input id="inputEmail" name="inputEmail" onkeyup="verification()" onreset="res()">
 
-    <section class="slide null">
-        <img src="images/yandex_lang_ru.svg" class="yandex"/>
-    </section>
+<script>
+	var input = document.getElementById('inputEmail');
 
-    <section class="slide first">
-        <div class="arrow">
-            <img src="images/yandex_lang_ru.svg" class="yandex"/>
-            <h2>Интеграционное тестирование</h2>
-            <div class="info">
-                <p class="author"><span class="first-red">С</span>ергей Жигалов</p>
-                <p class="location">Курс разработки интерфейсов, 2014 г.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide cover h">
-        <h2>Призраки и приведения</h2>
-        <img src="images/main.jpg" alt=""/>
-    </section>
-
-    <section class="slide cover w">
-        <img src="images/casperjs.png" alt=""/>
-    </section>
-
-    <section class="slide">
-        <h2>CasperJS</h2>
-        <ul>
-            <li><a href="http://casperjs.org/">http://casperjs.org/</a></li>
-            <li>navigation scripting</li>
-            <li>testing utility</li>
-            <li><a href="http://phantomjs.org/">http://phantomjs.org/</a></li>
-            <li><a href="http://slimerjs.org/">http://slimerjs.org/</a></li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> Install</h2>
-        <ul>
-            <li class="next">$ brew install casperjs</li>
-            <li class="next">
-                <pre>
-<code>$ git clone git://github.com/n1k0/casperjs.git</code>
-<code>$ cd casperjs</code>
-<code>$ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs</code>
-                </pre>
-            </li>
-            <li class="next">$ npm install -g casperjs</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> API</h2>
-        <ul>
-            <li>The casper module</li>
-            <li>The clientutils module</li>
-            <li>The colorizer module</li>
-            <li>The mouse module</li>
-            <li>The tester module</li>
-            <li>The utils module</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> API</h2>
-        <ul>
-            <li><mark>The casper module</mark></li>
-            <li>The clientutils module</li>
-            <li>The colorizer module</li>
-            <li>The mouse module</li>
-            <li><mark>The tester module</mark></li>
-            <li>The utils module</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> casper</h2>
-        <ul>
-            <li><a href="http://docs.casperjs.org/en/latest/modules/casper.html">http://docs.casperjs.org/en/latest/modules/casper.html</a></li>
-            <li>start(String url[, Function then])</li>
-            <li>thenOpen(String location[, mixed options])</li>
-            <li>click(String selector)</li>
-            <li>back()</li>
-            <li>forward()</li>
-            <li>getElementAttribute(String selector, String attribute)</li>
-            <li>run(fn onComplete[, int time])</li>
-            <li>...</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> run</h2>
-        <ul>
-            <li>casperjs selftest</li>
-            <li>WebStorm</li>
-            <li>casperjs test.js</li>
-        </ul>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 01</h2>
-        <img src="images/demoTime.jpg" alt=""/>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> tester</h2>
-        <ul>
-            <li>assert(Boolean condition[, String message])</li>
-            <li>assertEquals(mixed testValue, mixed expected[, String message])s</li>
-            <li>assertExists(String selector[, String message])</li>
-            <li>assertTitle(String expected[, String message])</li>
-            <li>assertVisible(String selector[, String message])</li>
-            <li>assertSelectorHasText(String selector, String text[, String message])</li>
-            <li>...</li>
-        </ul>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 02 && DEMO 03</h2>
-        <img src="images/demoTime.jpg" alt=""/>
-    </section>
-
-    <section class="slide cover w">
-        <h2>capture</h2>
-        <img src="images/takeAPhoto.jpg" alt=""/>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> capture</h2>
-        <ul>
-            <li>capture(String targetFilepath, [Object clipRect, Object imgOptions])</li>
-            <li class="next">clipRect: { top: 0, left: 0, width: 800, height: 600 }</li>
-            <li class="next">imgOptions: { format: 'jpg', quality: 75 }</li>
-            <li class="next">// bmp, jpg, jpeg, png, ppm, tiff, xbm and xpm</li>
-        </ul>
-        <ul>
-            <li>captureBase64(String format[, Mixed area])</li>
-            <li class="next">String: area is a CSS3 selector string</li>
-            <li class="next">clipRect: { top: 0, left: 0, width: 800, height: 600 }</li>
-        </ul>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 04</h2>
-        <img src="images/demoTime.jpg" alt=""/>
-    </section>
-
-    <section class="slide">
-        <h2>Асинхронность</h2>
-        <img src="images/acync.gif" alt="" style="display: block;" width="500"/>
-    </section>
-
-    <section class="slide">
-        <h2><small>CasperJS</small> wait</h2>
-        <ul>
-            <li class="next">wait(Number timeout[, Function then])</li>
-            <li class="next">waitFor(Function testFx[, Function then, Function onTimeout, Number timeout, Object details])</li>
-            <li class="next">waitForAlert(Function then[, Function onTimeout, Number timeout])</li>
-            <li class="next">waitForUrl(String|RegExp url[, Function then, Function onTimeout, Number timeout])</li>
-            <li class="next">waitForSelector(String selector[, Function then, Function onTimeout, Number timeout])</li>
-            <li class="next">waitUntilVisible(String selector[, Function then, Function onTimeout, Number timeout])</li>
-            <li class="next">...</li>
-        </ul>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 05</h2>
-        <img src="images/demoTime.jpg" alt=""/>
-    </section>
-
-    <section class="slide cover w">
-        <img src="images/karma.png" alt="" style="padding: 25% 0; background: #ffffff"/>
-    </section>
-
-    <section class="slide">
-        <h2>Karma</h2>
-        <ul>
-            <li><a href="http://karma-runner.github.io/0.12/index.html">http://karma-runner.github.io/0.12/index.html</a></li>
-            <li>cmd + s</li>
-            <li>mocha / jasmine / qunit / ...</li>
-            <li>chrome / firefox / opera / safari / ie / ...</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>Karma</small> Install</h2>
-        <ul>
-            <li>$ npm install karma --save-dev</li>
-            <li class="next">$ npm install karma-mocha  --save-dev</li>
-            <li class="next">$ npm install karma-chai karma-chai-plugins --save-dev</li>
-            <li class="next">$ npm install karma-chrome-launcher --save-dev</li>
-            <li class="next">$ npm install karma-... --save-dev</li>
-            <li class="next">$ npm install -g karma-cli</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>Karma</small> Config</h2>
-        <ul>
-            <li>basePath: ''</li>
-            <li>frameworks: ['mocha', 'chai'],</li>
-            <li>files: [ 'test/*.test.js' ]</li>
-            <li>autoWatch: true</li>
-            <li>browsers: ['Chrome']</li>
-            <li>...</li>
-            <li class="next">$ karma init my.conf.js</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>Karma</small> Run</h2>
-        <ul>
-            <li>karma start my.conf.js</li>
-        </ul>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 01</h2>
-        <img src="images/demo_time.jpg"  width="100%" height="100%"/>
-    </section>
-
-    <section class="slide cover w">
-        <img src="images/protractor-logo.png" style="padding: 27% 0; background: #ffffff"/>
-    </section>
-
-    <section class="slide">
-        <h2>Protractor</h2>
-        <ul>
-            <li><a href="http://angular.github.io/protractor/#/">http://angular.github.io/protractor/</a></li>
-            <li>mocha / jasmine / Cucumber </li>
-            <li>Selenium</li>
-            <li>end-to-end</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> How it works</h2>
-        <img src="images/protractor_components.png" alt="" width="130%" style="margin-left: -15%"/>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> Install</h2>
-        <ul>
-            <li>$ npm install -g protractor</li>
-            <li>$ webdriver-manager update</li>
-            <li>$ webdriver-manager start</li>
-            <li class="next">$ npm install -g mocha</li>
-            <li class="next">$ npm install chai</li>
-            <li class="next">$ npm install chai-as-promised</li>
-        </ul>
-    </section>
-
-
-
-    <section class="slide">
-        <h2><small>Protractor</small> chai</h2>
-        <pre class="javascript">
-<code>var chai = require('chai');</code>
-<code>var chaiAsPromised = require('chai-as-promised');</code>
-<code>            </code>
-<code>chai.use(chaiAsPromised);</code>
-<code>var expect = chai.expect;</code>
-        </pre>
-
-        <pre class="javascript">
-<code>expect(browser.getTitle()).to.<mark>eventually</mark>.equal('URL encoded');</code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> Config</h2>
-<pre class="javascript">
-<code>{</code>
-<code>    seleniumAddress: 'http://localhost:4444/wd/hub',</code>
-<code>    specs: [ 'test/*.test.js' ],</code>
-<code>    framework: 'mocha',</code>
-<code>    mochaOpts: { reporter: 'spec', timeout: 4000 },</code>
-<code>    capabilities: { 'browserName': 'chrome', 'version': 'ANY' },</code>
-<code>    baseUrl: 'http://localhost:63342'</code>
-<code>}</code>
-</pre>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> Browser</h2>
-        <pre class="javascript">
-<code>browser.get(destination, opt_timeout)</code>
-<code>browser.sleep(timeout)</code>
-<code>browser.back()</code>
-<code>browser.forward()</code>
-<code>browser.refresh()</code>
-<code>browser.getCookie(name)</code>
-<code>...</code>
-        </pre>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 02</h2>
-        <img src="images/demo_time.jpg"  width="100%" height="100%"/>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> Angular</h2>
-        <pre class="javascript">
-            <code>browser.ignoreSynchronization = true;</code>
-        </pre>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 03</h2>
-        <img src="images/demo_time.jpg"  width="100%" height="100%"/>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> Locators</h2>
-        <pre class="javascript">
-<code>by.css('.myclass')</code>
-<code>by.id('myid')</code>
-<code>by.tagName('div')</code>
-<code>element(by.css('some-css')).element(by.tagName('tag-within-css'));</code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> Actions</h2>
-        <pre class="javascript">
-<code>var el = element(locator);</code>
-<code>            </code>
-<code>el.isPresent();</code>
-<code>el.isDisplayed();</code>
-<code>el.click();</code>
-<code>el.sendKeys('my text');</code>
-<code>el.clear();</code>
-<code>el.getAttribute('value');</code>
-<code>el.getText().then(function(text) {</code>
-<code>    console.log(text);</code>
-<code>});</code>
-        </pre>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 04</h2>
-        <img src="images/demo_time.jpg"  width="100%" height="100%"/>
-    </section>
-
-    <section class="slide">
-        <h2><small>Protractor</small> wait</h2>
-        <pre class="javascript">
-<code>browser.wait(fn, timeout, opt_message)</code>
-        </pre>
-    </section>
-
-    <section class="slide cover">
-        <h2>DEMO 05</h2>
-        <img src="images/demo_time.jpg"  width="100%" height="100%"/>
-    </section>
-
-
-    <section class="slide cover">
-        <img src="images/take_a_photo.jpg"  width="100%" height="100%"/>
-    </section>
-
-
-    <section class="slide cover">
-        <h2>DEMO 06</h2>
-        <img src="images/demo_time.jpg"  width="100%" height="100%"/>
-    </section>
-
-	<div class="progress"><div></div></div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/highlight.min.js"></script>
-    <script src="js/shower/shower.min.js"></script>
-    <script src="js/index.js"></script>
+  function res(){
+    var input = document.getElementById('inputEmail');
+    input.className  = 'none';
+  }
+	function verification(){
+		var input = document.getElementById('inputEmail');
+		if (input.value == ""){
+      input.className  = 'none';
+    } else if ( /^([a-z0-9_\.-]+)@([a-z0-9_-]+)\.([a-z]{2,})$/i.test(input.value) ){
+			input.className = 'goodEmail';
+		} else {
+			input.className = 'badEmail';
+		}
+	};
+</script>
 </body>
 </html>
+

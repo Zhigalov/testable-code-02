@@ -21,14 +21,15 @@ var validate = function(browser, email) {
 };
 
 casper.test.begin('Validation testing', function suite(test) {
-	casper.start('http://localhost:8000/email.html', function() {
-		test.assertEquals(validate(this, 'uskovm@gmail.com'), 'green', 'uskovm@gmail.com');
-		test.assertEquals(validate(this, 'vnbgfjbndkjnv'), 'red', 'vnbgfjbndkjnv');
-		test.assertEquals(validate(this, 'uskovm@gmail.com'), 'green', 'michaeluskov@ya.ru');
-		test.assertEquals(validate(this, ''), '', 'Blank input');
-		test.assertEquals(validate(this, 'uskovm@[192.168.0.1]'), 'green', 'uskovm@[192.168.0.1]');
-		test.assertEquals(validate(this, '@[192.168.0.1]'), 'green', '@[192.168.0.1]');
-	}).run(function() {
+	casper.start('http://localhost:8000/email.html')
+		   .then(function() {
+				test.assertEquals(validate(this, 'uskovm@gmail.com'), 'green', 'uskovm@gmail.com (right)');
+				test.assertEquals(validate(this, 'vnbgfjbndkjnv'), 'red', 'vnbgfjbndkjnv (wrong)');
+				test.assertEquals(validate(this, 'uskovm@gmail.com'), 'green', 'michaeluskov@ya.ru (right)');
+				test.assertEquals(validate(this, ''), '', 'Blank input');
+				test.assertEquals(validate(this, 'uskovm@[192.168.0.1]'), 'green', 'uskovm@[192.168.0.1] (right)');
+				test.assertEquals(validate(this, '@[192.168.0.1]'), 'red', '@[192.168.0.1] (wrong)');
+		   }).run(function() {
 		test.done();
 	});
 	

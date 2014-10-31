@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e-mail verification</title>
+    <style>
+     .badEmail {
+      border: 5px solid red;
+      padding: 1px;
+     }
+     .goodEmail {
+       border: 5px solid green;
+       padding: 1px;	
+     }
+     .none {
+      border: 1px solid #ccc;
+     }
+    </style>
+
+</head>
+<body>
+<label for="inputEmail" id="for_inputEmail">e-mail:</label>
+<input id="inputEmail" name="inputEmail" onkeyup="verification()" onreset="res()">
+
+<script>
+	var input = document.getElementById('inputEmail');
+
+  function res(){
+    var input = document.getElementById('inputEmail');
+    input.className  = 'none';
+  }
+	function verification(){
+		var input = document.getElementById('inputEmail');
+		if (input.value == ""){
+      input.className  = 'none';
+    } else if ( /^([a-z0-9_\.-]+)@([a-z0-9_-]+)\.([a-z]{2,})$/i.test(input.value) ){
+			input.className = 'goodEmail';
+		} else {
+			input.className = 'badEmail';
+		}
+	};
+</script>
+</body>
+</html>
+
